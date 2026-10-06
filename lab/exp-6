@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<ctype.h>
+
+int main()
+{
+    char s[20];
+    int i,flag=1;
+
+    printf("Enter identifier: ");
+    scanf("%s",s);
+
+    if(!isalpha(s[0])) flag=0;
+
+    for(i=1;s[i];i++)
+        if(!isalnum(s[i])) flag=0;
+
+    if(flag) printf("Valid identifier");
+    else printf("Not a valid identifier");
+
+    return 0;
+}
