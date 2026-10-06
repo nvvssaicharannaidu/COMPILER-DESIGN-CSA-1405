@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char s[50];
+
+    printf("Enter comment: ");
+    fgets(s,50,stdin);
+
+    if(s[0]=='/' && s[1]=='/')
+        printf("It is a comment");
+
+    else if(s[0]=='/' && s[1]=='*' &&
+            strstr(s,"*/"))
+        printf("It is a comment");
+
+    else
+        printf("It is not a comment");
+
+    return 0;
+}
