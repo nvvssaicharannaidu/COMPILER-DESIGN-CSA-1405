@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+
+int isKeyword(char s[])
+{
+    char k[][10]={"main","auto","break","case","char","const",
+    "continue","default","do","double","else","enum","extern",
+    "float","for","goto","if","int","long","register","return",
+    "short","signed","sizeof","static","struct","switch",
+    "typedef","unsigned","void","printf","while"};
+
+    for(int i=0;i<32;i++)
+        if(strcmp(k[i],s)==0)
+            return 1;
+
+    return 0;
+}
+
+int main()
+{
+    char ch,buf[20],op[]="+-*/%=";
+    FILE *fp;
+    int i=0;
+
+    fp=fopen("flex_input.txt","r");
+
+    if(fp==NULL)
+    {
+        printf("File error");
+        return 0;
+    }
+
+    while((ch=fgetc(fp))!=EOF)
+    {
+        for(int j=0;j<6;j++)
+            if(ch==op[j])
+                printf("%c is operator\n",ch);
+
+        if(isalnum(ch))
+            buf[i++]=ch;
+
+        else if((ch==' '||ch=='\n') && i)
+        {
+            buf[i]='\0';
+            i=0;
+
+            if(isKeyword(buf))
+                printf("%s is keyword\n",buf);
+            else
+                printf("%s is identifier\n",buf);
+        }
+    }
+
+    fclose(fp);
+    return 0;
+}
