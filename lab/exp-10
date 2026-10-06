@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main()
+{
+    printf("Original:\n");
+    printf("S->iEtS|iEtSeS|a\n\n");
+
+    printf("After left factoring:\n");
+    printf("S->iEtSX\n");
+    printf("X->|eS|a");
+
+    return 0;
+}
