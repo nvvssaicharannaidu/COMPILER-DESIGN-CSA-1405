@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main()
+{
+    char A,a,b;
+
+    printf("Enter A alpha beta: ");
+    scanf(" %c %c %c",&A,&a,&b);
+
+    printf("%c->%c%c'\n",A,b,A);
+    printf("%c'->%c%c'|E",A,a,A);
+
+    return 0;
+}
