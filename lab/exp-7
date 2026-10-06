@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<ctype.h>
+
+char p[10][10];
+int n;
+
+void first(char c)
+{
+    int i;
+
+    if(!isupper(c))
+    {
+        printf("%c ",c);
+        return;
+    }
+
+    for(i=0;i<n;i++)
+        if(p[i][0]==c)
+            first(p[i][2]);
+}
+
+int main()
+{
+    char c;
+    int i;
+
+    printf("No. of productions: ");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%s",p[i]);
+
+    printf("Find FIRST: ");
+    scanf(" %c",&c);
+
+    printf("FIRST(%c) = { ",c);
+    first(c);
+    printf("}");
+
+    return 0;
+}
