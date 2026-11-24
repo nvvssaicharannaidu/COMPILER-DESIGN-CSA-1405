@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    char s[100];
+
+    printf("Enter: ");
+    fgets(s, 100, stdin);
+
+    if(s[0]=='/' && s[1]=='/')
+        printf("Comment");
+    else if(s[0]=='/' && s[1]=='*')
+        printf("Comment");
+    else
+        printf("Not a Comment");
+
+    return 0;
+}

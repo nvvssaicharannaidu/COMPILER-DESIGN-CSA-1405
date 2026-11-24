@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    char c;
+    int space=0, line=0;
+
+    printf("Enter text:\n");
+
+    while((c=getchar()) != '#')
+    {
+        if(c==' ')
+            space++;
+
+        if(c=='\n')
+            line++;
+    }
+
+    printf("Spaces = %d\n", space);
+    printf("New lines = %d", line);
+
+    return 0;
+}

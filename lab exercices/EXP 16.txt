@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+
+    c = a + b;
+
+    printf("MOV R1, %d\n", a);
+    printf("ADD R1, %d\n", b);
+    printf("MOV RESULT, R1\n");
+    printf("Result = %d\n", c);
+
+    return 0;
+}

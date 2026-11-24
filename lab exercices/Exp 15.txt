@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    char c;
+    int characters = 0, words = 0, lines = 0;
+    int inWord = 0;
+
+    printf("Enter text (press # to stop):\n");
+
+    while ((c = getchar()) != '#')
+    {
+        characters++;
+
+        if (c == '\n')
+            lines++;
+
+        if (c == ' ' || c == '\n' || c == '\t')
+            inWord = 0;
+        else if (inWord == 0)
+        {
+            words++;
+            inWord = 1;
+        }
+    }
+
+    if (characters > 0)
+        lines++;
+
+    printf("\nCharacters = %d", characters);
+    printf("\nWords = %d", words);
+    printf("\nLines = %d\n", lines);
+
+    return 0;
+}

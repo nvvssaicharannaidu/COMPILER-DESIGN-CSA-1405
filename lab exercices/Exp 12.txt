@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    char s[50];
+
+    printf("Enter expression: ");
+    scanf("%s", s);
+
+    if (s[0] == 'i')
+        printf("String accepted");
+    else
+        printf("String rejected");
+
+    return 0;
+}
